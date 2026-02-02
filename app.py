@@ -57,17 +57,16 @@ st.markdown("""
         width: 100%;
         height: 3.5em;
     }
-    .stButton>button:hover { background-color: #333333; color: white; }
+    .stButton>button:hover { background-color: #333333; color: white; border: none; }
     </style>
     """, unsafe_allow_html=True)
 
 # --- 2. HEADER & LOGO ---
-# Replace LOGO_URL with the actual URL of your uploaded Orosun logo
-LOGO_URL = "https://placehold.co/200x50/white/002868?text=OROSUN+HEALTH"
+LOGO_URL = "https://github.com/olalesi-dev/orosun2026/blob/main/logo2.png?raw=true"
 
 st.markdown(f"""
     <div class="header-container">
-        <img src="{LOGO_URL}" width="180">
+        <img src="{LOGO_URL}" width="200">
         <div style="font-weight: 600; color: #666;">Modern Care. American Excellence.</div>
     </div>
     """, unsafe_allow_html=True)
@@ -89,15 +88,15 @@ if view == "Patient Portal":
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        st.markdown('<div class="service-card"><h3>Weight Loss</h3><p>GLP-1 programs managed by expert clinicians.</p></div>', unsafe_allow_html=True)
+        st.markdown('<div class="service-card"><h3>Weight Loss</h3><p>Precision GLP-1 programs managed by expert clinicians.</p></div>', unsafe_allow_html=True)
         if st.button("Get Started", key="wl"): st.session_state.path = "Weight Loss"
         
     with col2:
-        st.markdown('<div class="service-card"><h3>Radiology</h3><p>Expert second opinions on your imaging scans.</p></div>', unsafe_allow_html=True)
+        st.markdown('<div class="service-card"><h3>Radiology</h3><p>Expert second opinions on your diagnostic imaging scans.</p></div>', unsafe_allow_html=True)
         if st.button("Consult Now", key="rad"): st.session_state.path = "Radiology"
         
     with col3:
-        st.markdown('<div class="service-card"><h3>Wellness</h3><p>Hormone optimization and longevity protocols.</p></div>', unsafe_allow_html=True)
+        st.markdown('<div class="service-card"><h3>Wellness</h3><p>Hormone optimization and personalized longevity protocols.</p></div>', unsafe_allow_html=True)
         if st.button("Explore", key="hrt"): st.session_state.path = "Wellness"
 
     if 'path' in st.session_state:
@@ -107,12 +106,10 @@ if view == "Patient Portal":
         history = st.text_area("Tell us about your medical goals...")
         if st.button("Submit & Proceed to Checkout"):
             st.info("Securing clinical record... Opening payment.")
-            # Your Stripe Pricing Table
             components.html('<script async src="https://js.stripe.com/v3/pricing-table.js"></script><stripe-pricing-table pricing-table-id="prctbl_1SvBvdAwzTkFdWZ3nkZccoTf" publishable-key="pk_live_51SpJwRAwzTkFdWZ3n9aOWy8NnXX8tv1IVKAuZ7CCuQXQNLUOXRSH8gk8IarM5AOdgaoHQGZAmUjWhINKsJfjJf9U00z5ZusTia"></stripe-pricing-table>', height=600)
 
-    # --- 4. ABOUT ME (RO-STYLE BIO) ---
-    # Replace PHOTO_URL with the URL of your uploaded AI headshot
-    PHOTO_URL = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600"
+    # --- 4. ABOUT THE FOUNDER (BIO) ---
+    PHOTO_URL = "https://github.com/olalesi-dev/orosun2026/blob/main/IMG_4682%20(1).jpg?raw=true"
 
     st.markdown(f"""
         <div class="bio-container">
@@ -140,7 +137,7 @@ if view == "Patient Portal":
 else:
     # --- 5. DOCTOR DASHBOARD ---
     st.title("👨‍⚕️ Orosun Worklist")
-    st.info("Securely connected to Google Cloud FHIR Store: emr_records")
+    st.info("Sovereign EMR: patriotic_health_data")
     
     st.write("### Patient Queue")
     with st.container(border=True):
@@ -149,4 +146,5 @@ else:
             st.write("**Patient:** Test Patient")
             st.caption("Status: Paid - Awaiting Review")
         with colB:
+            # Linking back to your Google Cloud PACS
             st.link_button("🎥 Launch OHIF PACS", "https://ohif-viewer-894403495720.us-central1.run.app")
