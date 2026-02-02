@@ -62,7 +62,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # --- 2. HEADER & LOGO ---
-# Replace LOGO_URL with your actual logo link (from Squarespace or GitHub)
+# Replace LOGO_URL with the actual URL of your uploaded Orosun logo
 LOGO_URL = "https://placehold.co/200x50/white/002868?text=OROSUN+HEALTH"
 
 st.markdown(f"""
@@ -111,7 +111,7 @@ if view == "Patient Portal":
             components.html('<script async src="https://js.stripe.com/v3/pricing-table.js"></script><stripe-pricing-table pricing-table-id="prctbl_1SvBvdAwzTkFdWZ3nkZccoTf" publishable-key="pk_live_51SpJwRAwzTkFdWZ3n9aOWy8NnXX8tv1IVKAuZ7CCuQXQNLUOXRSH8gk8IarM5AOdgaoHQGZAmUjWhINKsJfjJf9U00z5ZusTia"></stripe-pricing-table>', height=600)
 
     # --- 4. ABOUT ME (RO-STYLE BIO) ---
-    # Replace PHOTO_URL with your AI Headshot link
+    # Replace PHOTO_URL with the URL of your uploaded AI headshot
     PHOTO_URL = "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=600"
 
     st.markdown(f"""
@@ -122,12 +122,14 @@ if view == "Patient Portal":
                 </div>
                 <div style="flex: 2; min-width: 350px;">
                     <h2 style="margin-top: 0;">Olalesi Osunsade, MD, DABR®</h2>
-                    <p style="color: #002868; font-weight: 600; letter-spacing: 1px;">DUAL BOARD-CERTIFIED RADIOLOGIST</p>
+                    <p style="color: #002868; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Dual Board-Certified Radiologist</p>
                     <p>Dr. Osunsade graduated from <b>George Washington University School of Medicine</b> in 2012. 
-                    Born in Washington, D.C. and raised internationally, he brings a unique global perspective to 
-                    precision diagnostics. With fellowship training in Vascular and Interventional Radiology, 
-                    "Dr. O" founded Orosun Health to merge elite clinical expertise with modern telehealth accessibility.</p>
-                    <p><b>Credentials:</b><br>
+                    Born in Washington, D.C. and raised internationally across the Philippines, Tanzania, Kenya, and Nigeria, 
+                    he brings a unique global perspective to precision diagnostics. With fellowship training in Vascular 
+                    and Interventional Radiology, "Dr. O" founded Orosun Health to merge elite clinical expertise with 
+                    modern telehealth accessibility.</p>
+                    <p><b>Expertise & Credentials:</b><br>
+                    • ABR Certified: Interventional & Diagnostic Radiology<br>
                     • Licensed in: MI, MD, TX, FL, CA, DC, OH, WI, NY<br>
                     • NPI: 1568720266</p>
                 </div>
